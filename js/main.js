@@ -1,27 +1,46 @@
-const URL_ENDPOINT = "https://pokeapi.co/api/v2/pokemon/";
+const URL_ENDPOINT = "https://pokeapi.co/api/v2/";
+const URL_POKEMON = URL_ENDPOINT + "pokemon";
 
-/** 
- * Muestra informacion de un pokemon en pantalla
- * 
-*/
 const ShowCard = (pokemon) => {
-    console.log(pokemon);
+    const contenedor = document.querySelector("#container-list");
+    const ul = document.createElement("ul");
+    ul.classList.add("list-details");
 
-    const containerList = document.querySelector("#container-list");
-    const li = document.createElement('li');
+    const img = document.createElement("img");
+    img.src = pokemon.sprites.front_default;
+    img.alt = pokemon.name + " sprite";
 
-    const pokemonName = document.createElement('h3');
-    pokemonName.innerText = pokemon.name;
-    li.appendChild(pokemonName);
+    const h3 = document.createElement("h3");
+    const li = document.createElement("li");
+    const p = document.createElement("p");
 
-    containerList.appendChild(li);
+    p.innerText = "Tipo:" + pokemon.types.map(type => type.type.name).join(", ");
+    
+    h3.innerText = pokemon.name;
+    li.append(h3, p);
+    ul.append(img, li);
+    contenedor.appendChild(ul);
 }
 
-fetch(URL_ENDPOINT)
+fetch(URL_POKEMON)
 .then(data => data.json())
-.then(result => {
-    const results = result.results;
-    const primerResultado = results[0];
-    ShowCard(primerResultado);
-    
+.then(pokemons => {
+    const pokemonList = pokemons.results;
+
+    pokemonList.forEach(pokemon => {
+        // const pokemonTotal = pokemon.results.slice(0, 100);
+        // Obtengo el id de cada pokemon
+        const pokemonId = pokemon.url.split("/")[6];
+        
+        // Hago un pedido a la url en base al id de cada pokemon para 
+        //poder trabajar sus datos.
+        fetch(`${URL_ENDPOINT}pokemon/${pokemonId}`)
+        .then(data => data.json())
+        .then(pokemonData => {
+            ShowCard(pokemonData);
+        })
+        .catch(error => {
+            console.error("Error al obtener los detalles del Pokémon:", error);
+        });
+    });
 });
