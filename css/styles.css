@@ -53,4 +53,21 @@ h1 {
 
 .list-details .list-item {
     text-align: center;
-} 
+}
+
+.btn-card {
+    margin-top: 2.4rem;
+    padding: 6px 20px;
+    color: #ffffff;
+    background-color: rgb(161, 0, 0);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .2s all ease-in-out;
+}
+
+.btn-card:hover {
+    background-color: rgb(120, 4, 4);
+    transition: .2s all ease-in-out;
+    cursor: pointer;
+}
