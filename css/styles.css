@@ -13,6 +13,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 /* BANNER */
 header {
     width: 100%;
@@ -141,6 +145,7 @@ header .container-banner {
 .header-details h1 {
     color: #ffffff;
     margin-bottom: 0;
+    font-family: 'Lato', sans-serif;
 }
 
 main .container-list-details {
@@ -172,6 +177,11 @@ main .container-list-details {
     transition: .2s all ease-in-out;
 }
 
+.number-details, .ratio-details, .text-list {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
 .list-details-extended > .container-list-details {
     display: flex;
     flex-direction: column;
@@ -182,7 +192,7 @@ main .container-list-details {
 }
 
 .list-details-extended .pokemon-name-details {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
 }
 
@@ -193,4 +203,6 @@ main .container-list-details {
 .list-details-extended .container-list-details .abilities li ,
 .list-details-extended .container-list-details .stats li {
     margin-left: 1rem;
+    margin-bottom: 5px;
+    font-family: 'Lato', sans-serif;
 }
