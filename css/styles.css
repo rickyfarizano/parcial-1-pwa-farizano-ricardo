@@ -47,12 +47,15 @@ header .container-banner {
     font-weight: 900;
     font-size: 2.5rem;
     color: #ffffff;
+    text-wrap: balance;
 }
 
 .btn-seeMore {
     color: #ffffff;
     padding: .8rem 2rem;
+    margin: 10px;
     background-color: rgb(215, 183, 5);
+    text-align: center;
     font-size: 1.2rem;
     font-family: 'Lato';
     font-weight: 600;
@@ -73,7 +76,6 @@ header .container-banner {
 }
 
 .container-list {
-    margin-left: 1rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
@@ -181,8 +183,12 @@ header .container-banner {
     font-family: 'Lato', sans-serif;
 }
 
+main .container-main-details {
+    display: flex;
+    flex-direction: column;
+}
+
 main .container-list-details {
-    margin-left: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -238,4 +244,67 @@ main .container-list-details {
     margin-left: 1rem;
     margin-bottom: 5px;
     font-family: 'Lato', sans-serif;
+}
+
+/* MEDIAQUERIES */
+@media screen and (max-width: 1320px) {
+    .container-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .container-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .container-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ESTILOS DETAILS.HTML */
+@media screen and (max-width: 550px) {
+    main .container-list-details {
+        margin: 10px;
+    }
+
+    .list-details-extended {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .banner_main-title {
+        font-family: 'Lato';
+        font-weight: 900;
+        font-size: 2rem;
+        color: #ffffff;
+        text-wrap: balance;
+    }
+}
+
+/* ESTILOS DETAILS.HTML */
+@media screen and (max-width: 550px) {
+    main .list-details-extended > .container-list-details {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list-details-extended .container-list-details .abilities ,
+    .list-details-extended .container-list-details .stats {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .list-details-extended .container-list-details .abilities li,
+    .list-details-extended .container-list-details .stats li {
+        margin-left: 0;
+    }
 }
