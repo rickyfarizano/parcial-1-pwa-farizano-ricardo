@@ -40,7 +40,7 @@ const ShowCard = (pokemon) => {
  * @param id Numero identificador o nombre del pokemon.
  */
 const ShowDetails = (id) => {
-    window.location.href = "http://127.0.0.1:5500/details.html?id=" + id;
+    window.location.href = "http://127.0.0.1:5500/detalle.html?id=" + id;
 }
 
 fetch(URL_LIMIT)
