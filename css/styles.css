@@ -139,7 +139,40 @@ header .container-banner {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
 
+.btn-container {
+    width: 100%;
+    margin-top: 5px;
+    display: flex;
+}
+
+.btn-back {
+    width: auto;
+    color: #ffffff;
+    padding: .8rem 1.2rem;
+    background-color: rgb(215, 183, 5);
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: .2s all ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-back i {
+    font-size: 1.8rem;
+}
+
+.btn-back:hover {
+    background-color: rgb(198, 169, 6);
+    cursor: pointer;
+    transition: .2s all ease-in-out;
 }
 
 .header-details h1 {
