@@ -17,7 +17,7 @@ html {
 header {
     width: 100%;
     height: 100vh;
-    background-image: url(../imgs/banner-pokemon.jpg);
+    background-image: url('../imgs/banner-pokemon.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -124,4 +124,73 @@ header .container-banner {
     background-color: rgb(120, 4, 4);
     transition: .2s all ease-in-out;
     cursor: pointer;
+}
+
+/* ESTILOS DOCUMENTO DETALLES */
+.header-details {
+    background-color: #950a0a;
+    margin-bottom: 2.5rem;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.header-details h1 {
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+main .container-list-details {
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-details-extended {
+    background-color: #f2f2f2;
+    margin: auto;
+    /* margin: 2rem 0; */
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    box-shadow: 12px 12px 31px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 12px 12px 31px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 12px 12px 31px 0px rgba(0,0,0,0.53);
+    max-width: 500px;
+    min-width: 500px;
+    list-style: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: .2s all ease-in-out;
+}
+
+.list-details-extended > .container-list-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+.list-details-extended .pokemon-name-details {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.list-details-extended .container-list-details .abilities {
+    margin-bottom: 1rem;
+}
+
+.list-details-extended .container-list-details .abilities li ,
+.list-details-extended .container-list-details .stats li {
+    margin-left: 1rem;
 }

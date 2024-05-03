@@ -1,6 +1,7 @@
 const pokemonId = window.location.href.split("?id=")[1];
 const URL_ENDPOINT = "https://pokeapi.co/api/v2/";
 const URL_POKEMON = URL_ENDPOINT + "pokemon/" + pokemonId;
+const URL_POKEMON_CHARACT = URL_ENDPOINT + "characteristic/" + pokemonId; 
 
 /** 
  * Me genera las cards para cada Pokemon.
@@ -9,13 +10,19 @@ const URL_POKEMON = URL_ENDPOINT + "pokemon/" + pokemonId;
 const ShowCard = (pokemon) => {
     const contenedor = document.querySelector("#container-list");
     const ul = document.createElement("ul");
-    ul.classList.add("list-details");
+    ul.classList.add("list-details-extended");
+
+    const containerListDetails = document.createElement("div");
+    containerListDetails.classList.add("container-list-details");
     
     const img = document.createElement("img");
+    img.classList.add("img-details");
     img.src = pokemon.sprites.front_default;
     img.alt = pokemon.name + " sprite";
 
     const h3 = document.createElement("h3");
+    h3.classList.add("pokemon-name-details");
+
     const li = document.createElement("li");
     li.classList.add("list-item");
 
@@ -25,7 +32,7 @@ const ShowCard = (pokemon) => {
 
     // Creo las habilidades
     const abilitiesList = document.createElement("ul");
-    abilitiesList.classList.add("habilities");
+    abilitiesList.classList.add("abilities");
 
     const abilityListTitle = document.createElement('h4');
     abilityListTitle.classList.add("ability-title");
@@ -34,7 +41,7 @@ const ShowCard = (pokemon) => {
 
     // Creo las estadisticas
     const statsList = document.createElement("ul");
-    statsList.classList.add("habilities");
+    statsList.classList.add("stats");
 
     const statsListTitle = document.createElement('h4');
     statsListTitle.classList.add("ability-title");
@@ -60,7 +67,8 @@ const ShowCard = (pokemon) => {
     
     h3.innerText = pokemon.name;
     li.append(h3, p);
-    ul.append(img, li, abilitiesList, statsList);
+    containerListDetails.append( abilitiesList, statsList);
+    ul.append(img, li, containerListDetails);
     contenedor.appendChild(ul);
 }
 

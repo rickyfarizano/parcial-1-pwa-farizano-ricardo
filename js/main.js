@@ -21,10 +21,6 @@ const ShowCard = (pokemon) => {
     const li = document.createElement("li");
     li.classList.add("list-item");
 
-    const p = document.createElement("p");
-    p.innerText = "Tipo:" + pokemon.types.map(type => type.type.name).join(", ");
-    p.classList.add("text-list");
-
     const btn = document.createElement("button");
     btn.classList.add("btn-card");
     btn.innerText = "Ver mas";
@@ -34,7 +30,7 @@ const ShowCard = (pokemon) => {
     });
 
     h3.innerText = pokemon.name;
-    li.append(h3, p);
+    li.append(h3);
     ul.append(img, li, btn);
     contenedor.appendChild(ul);
 }
